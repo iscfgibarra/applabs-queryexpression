@@ -4,6 +4,13 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>Permite generar clausulas WHERE que se pueden usar en expresiones regulares para SQLServer, MySQL y Postgresql, por medio de un lenguaje de condiciones por objetos.</Description>
+    <PackageProjectUrl>https://github.com/iscfgibarra/applabs-queryexpression</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/iscfgibarra/applabs-queryexpression</RepositoryUrl>
+    <PackageTags>Wrapper, Sql, Postgresql, MySql, Query</PackageTags>
+    <RepositoryType>git</RepositoryType>
+    <Copyright>2019 ©AppLabs</Copyright>
+    <Company>AppLabs</Company>
+    <Authors>Francisco Ibarra</Authors>
   </PropertyGroup>
 
 </Project>
