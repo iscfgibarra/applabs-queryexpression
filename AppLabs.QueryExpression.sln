@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppLabs.QueryExpression", "AppLabs.QueryExpression\AppLabs.QueryExpression.csproj", "{AED0AF70-C7A8-4F0F-A0F6-6A2E02B87CE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppLabs.QueryExpression.Test", "AppLabs.QueryExpression.Test\AppLabs.QueryExpression.Test.csproj", "{E5C9AC0D-2F53-424D-90E4-301F2DF833CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AED0AF70-C7A8-4F0F-A0F6-6A2E02B87CE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AED0AF70-C7A8-4F0F-A0F6-6A2E02B87CE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AED0AF70-C7A8-4F0F-A0F6-6A2E02B87CE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AED0AF70-C7A8-4F0F-A0F6-6A2E02B87CE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5C9AC0D-2F53-424D-90E4-301F2DF833CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5C9AC0D-2F53-424D-90E4-301F2DF833CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5C9AC0D-2F53-424D-90E4-301F2DF833CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5C9AC0D-2F53-424D-90E4-301F2DF833CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {421898FF-5036-4A22-B4CC-1F5BC28B61F1}
+	EndGlobalSection
+EndGlobal
