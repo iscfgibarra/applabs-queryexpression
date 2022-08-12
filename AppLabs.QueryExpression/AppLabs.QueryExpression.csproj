@@ -8,11 +8,13 @@
     <RepositoryUrl>https://github.com/iscfgibarra/applabs-queryexpression</RepositoryUrl>
     <PackageTags>Wrapper, Sql, Postgresql, MySql, Query</PackageTags>
     <RepositoryType>git</RepositoryType>
-    <Copyright>2019 ©AppLabs</Copyright>
+    <Copyright>2022 ©AppLabs</Copyright>
     <Company>AppLabs</Company>
     <Authors>Francisco Ibarra</Authors>
     <LangVersion>10</LangVersion>
     <PackageVersion>2.0.0</PackageVersion>
+    <Title>AppLabs.QueryExpression</Title>
+    <PackageLicenseUrl>https://creativecommons.org/licenses/by/4.0/</PackageLicenseUrl>
   </PropertyGroup>
 
 </Project>
