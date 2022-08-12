@@ -6,16 +6,8 @@ namespace AppLabs.QueryExpression
 {
     public class WrapperExpression
     {
-        #region Constantes
-
         public const string LeftTermToBeStringOrExpression = "El termino izquierdo debe ser una WrapperExpression o una cadena.";
-
-
-        #endregion
-
-
-        #region Constructor
-
+        
         /// <summary>
         /// Una estructura de la forma termino-operador-termino que define una operación booleana dentro de una clausula WHERE.       
         /// </summary>
@@ -35,10 +27,7 @@ namespace AppLabs.QueryExpression
             Operator = oper;
             RightTerm = right;
         }
-
-        #endregion
-
-        #region Public-Members
+        
 
         /// <summary>
         /// Termino izquierdo de la operación; puede ser una cadena o una expresion anidada.
@@ -54,14 +43,7 @@ namespace AppLabs.QueryExpression
         /// Termino derecho de la operación; puede ser un objeto para comparación o una expresion anidada.
         /// </summary>
         public object RightTerm;
-
-        #endregion
-
-        #region Private-Members
-
-        #endregion
-
-        #region Public-Methods
+        
 
         /// <summary>
         /// Convierte una expresión a una cadena que es compatible para usarla como parte de una clausula WHERE.        
@@ -74,7 +56,7 @@ namespace AppLabs.QueryExpression
             switch (dbType.ToLower())
             {
                 case "mssql":
-                    return ToWhereClause(DbTypes.MsSql);
+                    return ToWhereClause();
 
                 case "mysql":
                     return ToWhereClause(DbTypes.MySql);
@@ -125,7 +107,7 @@ namespace AppLabs.QueryExpression
 
             switch (Operator)
             {
-                #region Process-By-Operators
+                
 
                 case Operators.And:
                     #region And
@@ -156,7 +138,7 @@ namespace AppLabs.QueryExpression
                 #endregion
 
                 case Operators.Or:
-                    #region Or
+                   
 
                     if (RightTerm == null) return null;
                     clause += "OR ";
@@ -181,10 +163,10 @@ namespace AppLabs.QueryExpression
                     }
                     break;
 
-                #endregion
+ 
 
                 case Operators.Equals:
-                    #region Equals
+                   
 
                     if (RightTerm == null) return null;
                     clause += "= ";
@@ -209,7 +191,7 @@ namespace AppLabs.QueryExpression
                     }
                     break;
 
-                #endregion
+               
 
                 case Operators.NotEquals:
                     #region NotEquals
@@ -237,10 +219,10 @@ namespace AppLabs.QueryExpression
                     }
                     break;
 
-                #endregion
+              
 
                 case Operators.In:
-                    #region In
+                  
 
                     if (RightTerm == null) return null;
                     int inAdded = 0;
@@ -278,7 +260,7 @@ namespace AppLabs.QueryExpression
                 #endregion
 
                 case Operators.NotIn:
-                    #region NotIn
+                   
 
                     if (RightTerm == null) return null;
                     int notInAdded = 0;
@@ -313,10 +295,10 @@ namespace AppLabs.QueryExpression
                     }
                     break;
 
-                #endregion
+               
 
                 case Operators.Contains:
-                    #region Contains
+                  
 
                     if (RightTerm == null) return null;
                     if (RightTerm is string)
@@ -334,10 +316,10 @@ namespace AppLabs.QueryExpression
                     }
                     break;
 
-                #endregion
+                
 
                 case Operators.ContainsNot:
-                    #region ContainsNot
+                  
 
                     if (RightTerm == null) return null;
                     if (RightTerm is string)
@@ -355,10 +337,10 @@ namespace AppLabs.QueryExpression
                     }
                     break;
 
-                #endregion
+              
 
                 case Operators.StartsWith:
-                    #region StartsWith
+                   
 
                     if (RightTerm == null) return null;
                     if (RightTerm is string)
@@ -374,10 +356,10 @@ namespace AppLabs.QueryExpression
                     }
                     break;
 
-                #endregion
+               
 
                 case Operators.EndsWith:
-                    #region EndsWith
+                 
 
                     if (RightTerm == null) return null;
                     if (RightTerm is string)
@@ -393,10 +375,10 @@ namespace AppLabs.QueryExpression
                     }
                     break;
 
-                #endregion
+            
 
                 case Operators.GreaterThan:
-                    #region GreaterThan
+                   
 
                     if (RightTerm == null) return null;
                     clause += "> ";
@@ -421,10 +403,10 @@ namespace AppLabs.QueryExpression
                     }
                     break;
 
-                #endregion
+               
 
                 case Operators.GreaterThanOrEqualTo:
-                    #region GreaterThanOrEqualTo
+                   
 
                     if (RightTerm == null) return null;
                     clause += ">= ";
@@ -449,10 +431,10 @@ namespace AppLabs.QueryExpression
                     }
                     break;
 
-                #endregion
+             
 
                 case Operators.LessThan:
-                    #region LessThan
+                   
 
                     if (RightTerm == null) return null;
                     clause += "< ";
@@ -477,10 +459,10 @@ namespace AppLabs.QueryExpression
                     }
                     break;
 
-                #endregion
+           
 
                 case Operators.LessThanOrEqualTo:
-                    #region LessThanOrEqualTo
+                  
 
                     if (RightTerm == null) return null;
                     clause += "<= ";
@@ -505,25 +487,25 @@ namespace AppLabs.QueryExpression
                     }
                     break;
 
-                #endregion
+              
 
                 case Operators.IsNull:
-                    #region IsNull
+                   
 
                     clause += " IS NULL";
                     break;
 
-                #endregion
+               
 
                 case Operators.IsNotNull:
-                    #region IsNotNull
+                   
 
                     clause += " IS NOT NULL";
                     break;
 
-                    #endregion
+                   
 
-                    #endregion
+                   
             }
 
             clause += ")";
@@ -755,11 +737,7 @@ namespace AppLabs.QueryExpression
                 return ret;
             }
         }
-
-        #endregion
-
-        #region Private-Methods
-
+        
         private string SanitizeString(DbTypes dbType, string s)
         {
             if (String.IsNullOrEmpty(s)) return String.Empty;
@@ -855,10 +833,7 @@ namespace AppLabs.QueryExpression
                     return null;
             }
         }
-
-        #endregion
-
-
+        
         /// <summary>
         /// Determina si el objeto es una lista.
         /// </summary>

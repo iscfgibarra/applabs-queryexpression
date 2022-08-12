@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>Permite generar clausulas WHERE que se pueden usar en expresiones regulares para SQLServer, MySQL y Postgresql, por medio de un lenguaje de condiciones por objetos.</Description>
     <PackageProjectUrl>https://github.com/iscfgibarra/applabs-queryexpression</PackageProjectUrl>
@@ -11,6 +11,8 @@
     <Copyright>2019 ©AppLabs</Copyright>
     <Company>AppLabs</Company>
     <Authors>Francisco Ibarra</Authors>
+    <LangVersion>10</LangVersion>
+    <PackageVersion>2.0.0</PackageVersion>
   </PropertyGroup>
 
 </Project>
